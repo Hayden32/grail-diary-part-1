@@ -13,7 +13,7 @@
         <!--Grail Diary-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CluesTableViewController" customModule="Grail" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="POIsTableViewController" customModule="Grail" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,6 +66,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="lmt-FQ-vXi"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -84,6 +87,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="eJI-wJ-BLg" id="rmj-bE-E4t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -174,12 +180,18 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="k46-iV-2fs" id="7jt-Pg-p9r"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d8d-F2-YIU">
                                         <rect key="frame" x="0.0" y="82.5" width="374" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="k46-iV-2fs" id="mvJ-qj-YdN"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clues" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPd-VQ-k9d">
                                         <rect key="frame" x="0.0" y="128.5" width="374" height="20.5"/>
@@ -192,18 +204,27 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="k46-iV-2fs" id="pAB-qd-ECd"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Clue 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YkG-9K-9wx">
                                         <rect key="frame" x="0.0" y="211" width="374" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="k46-iV-2fs" id="aho-pw-fdB"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Clue 3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jzY-LB-fNL">
                                         <rect key="frame" x="0.0" y="257" width="374" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="k46-iV-2fs" id="56J-C5-7g2"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -212,9 +233,16 @@
                                 <items>
                                     <barButtonItem title="Cancel" id="IS1-35-J4A">
                                         <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="cancelButtonTapped:" destination="k46-iV-2fs" id="8Qi-pq-T6w"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="aeD-yR-3DY"/>
-                                    <barButtonItem title="Save" id="SkM-WJ-I0M"/>
+                                    <barButtonItem title="Save" id="SkM-WJ-I0M">
+                                        <connections>
+                                            <action selector="SaveButtonTapped:" destination="k46-iV-2fs" id="dfp-on-Ob9"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -229,6 +257,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="q61-Fg-3p6"/>
                     </view>
+                    <connections>
+                        <outlet property="clue1TextFiled" destination="Ha8-IQ-959" id="yWg-8H-Kay"/>
+                        <outlet property="clue2TextField" destination="YkG-9K-9wx" id="Tfg-ek-pZh"/>
+                        <outlet property="clue3TextField" destination="jzY-LB-fNL" id="QOb-P4-9SB"/>
+                        <outlet property="countryTextField" destination="d8d-F2-YIU" id="Gys-rH-Gc5"/>
+                        <outlet property="locationTextField" destination="rTt-aa-yDz" id="EZe-v0-UoD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f13-HC-FVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
