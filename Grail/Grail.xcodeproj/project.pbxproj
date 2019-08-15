@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EFAC261B2305FE8B00C59832 /* CluesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC261A2305FE8B00C59832 /* CluesTableViewController.swift */; };
 		EFF09F162304B053008F80D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF09F152304B053008F80D6 /* AppDelegate.swift */; };
 		EFF09F1B2304B053008F80D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFF09F192304B053008F80D6 /* Main.storyboard */; };
 		EFF09F1D2304B054008F80D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFF09F1C2304B054008F80D6 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EFAC261A2305FE8B00C59832 /* CluesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CluesTableViewController.swift; sourceTree = "<group>"; };
 		EFF09F122304B053008F80D6 /* Grail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF09F152304B053008F80D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFF09F1A2304B053008F80D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 		EFF09F142304B053008F80D6 /* Grail */ = {
 			isa = PBXGroup;
 			children = (
+				EFF09F292304B13E008F80D6 /* View Controller */,
 				EFF09F272304B060008F80D6 /* Storyboard */,
 			);
 			path = Grail;
@@ -75,6 +78,14 @@
 				EFF09F212304B054008F80D6 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		EFF09F292304B13E008F80D6 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EFAC261A2305FE8B00C59832 /* CluesTableViewController.swift */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFAC261B2305FE8B00C59832 /* CluesTableViewController.swift in Sources */,
 				EFF09F162304B053008F80D6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
