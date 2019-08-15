@@ -9,22 +9,27 @@
 import UIKit
 
 class POIsTableViewController: UIViewController {
-
+    
     // MARK: - Properties
-    var poi: [POI] = []
+    var pois: [POI] = []
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
+    // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "AddPOIModalSegue" {
+            if let addPOIVC = segue.destination as? AddPOIViewController {
+                addPOIVC.delegate = self
+            }
+        }
     }
 }
 
@@ -40,6 +45,12 @@ extension POIsTableViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
+}
+
+extension POIsTableViewController: AddPOIDelegate {
+    func poiWasAdded(_ poi: POI) {
+        pois.append(poi)
+        dismiss(animated: true, completion: nil)
+        tableView.reloadData()
+    }
 }
